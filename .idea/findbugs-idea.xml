@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FindBugs-IDEA">
+    <plugins>
+      <plugin id="com.h3xstream.findsecbugs" enabled="true" bundled="true" />
+      <plugin id="com.mebigfatguy.fbcontrib" enabled="true">
+        <url>file:/C:/unipay/Git/fb-newContrib-7.4.3.sb.jar</url>
+      </plugin>
+    </plugins>
+  </component>
+</project>

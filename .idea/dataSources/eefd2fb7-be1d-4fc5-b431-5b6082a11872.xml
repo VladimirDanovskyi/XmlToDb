@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - xmltodb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="xmltodb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="unipay"/>
+    <schema id="7" parent="1" name="unipay_a5"/>
+    <table id="8" parent="2" name="client"/>
+    <table id="9" parent="2" name="transaction"/>
+    <column id="10" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="11" parent="8" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="12" parent="8" name="LAST_NAME">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="13" parent="8" name="MIDDLE_NAME">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <index id="14" parent="8" name="client_ID_uindex">
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="16" parent="8" name="client_ID_uindex">
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>client_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="17" parent="9" name="ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="9" name="PLACE">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="AMOUNT">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="20" parent="9" name="CURRENCY">
+      <Position>4</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="CARD">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="22" parent="9" name="CLIENT_FK">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="23" parent="9" name="transaction_id_uindex">
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="9" name="transaction_client_ID_fk">
+      <ColNames>CLIENT_FK</ColNames>
+    </index>
+    <key id="25" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="26" parent="9" name="transaction_id_uindex">
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>transaction_id_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="27" parent="9" name="transaction_client_ID_fk">
+      <ColNames>CLIENT_FK</ColNames>
+      <RefSchemaName>xmltodb</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
